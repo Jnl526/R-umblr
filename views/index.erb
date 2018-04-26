@@ -1,0 +1,19 @@
+<div class="main bd-content" id="content" role="main">
+
+<section class="products">
+            <div class="container">	
+            <div class="card-wrapper">
+                    <% @posts.each do |post| %>
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src=<%= car.img_url %> alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= car.car_name %><span class="card-text">$<%= car.car_price %></span></h5>
+                                <p class="card-text"><%= car.car_model %></p>
+                                
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </section>
+</div> <!--  	main	 -->
