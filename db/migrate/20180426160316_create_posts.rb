@@ -4,9 +4,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :featured_img
       t.string :content
-      t.integer :author_id
+      t.integer :user_id
 
-      t.timestamps null: false
+      t.date null: false
     end
   end
 end

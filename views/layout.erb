@@ -1,1 +1,131 @@
-<%= yield %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>It's About Nothing!</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="<%= url('/css/style.css') %>" rel="stylesheet" type="text/css" />
+    
+</head>
+
+<body>	
+	<header>	
+		<div class="container">
+      <nav class="navbar navbar-expand-md  navbar-default">
+        <a class="navbar-brand" href="/"><h1>It's About... Nothing?</h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="menu-icon" aria-hidden="true"></i></span>
+        </button>
+    
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Goodies</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="/cakes">Cakes</a>
+              <a class="dropdown-item" href="/cookies">Cookies</a>
+              <a class="dropdown-item" href="/muffins">Muffins</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Connect</a>
+            </li>
+          </ul>
+        <div>
+        <% if !user_exists? %>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign UP</a>
+      <% else %>
+        <a href="/logout" onClick="return confirm('Are you sure?')"> Logout</a>
+      <% end %>
+        </div>
+      </div>
+      </nav>
+		</div>
+</header>
+
+ 
+     
+        <%= yield %>
+      
+        <footer class="section section_footer">
+        <div class="container">
+          <div class="row center">
+            <div class="col-4">
+            
+              <!-- About Us -->
+              <h5 class="section_footer__heading">
+                About Us
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.
+              </p>
+    
+            </div>
+            <div class="col-4">
+            
+              <!-- Contact info -->
+              <h5 class="section_footer__heading">
+                Contact info
+              </h5>
+              <ul class="section_footer__info">
+                <li>
+                  <i class="fa fa-map-marker"></i> 1234 Altschul, New York, NY 10027-0000
+                </li>
+                <li>
+                  <i class="fa fa-phone"></i> +1 987 654 3210
+                </li>
+                <li>
+                  <i class="fa fa-envelope-o"></i> <a href="mailto:admin@domain.com">admin@domain.com</a>
+                </li>
+              </ul>
+    
+            </div>
+            <div class="col-4">
+            
+              <!-- Opening hours -->
+              <h5 class="section_footer__heading">
+                Opening hours
+              </h5>
+              <div class="section_footer__open">
+                <div class="section_footer__open__days">Monday - Thursday</div>
+                <div class="section_footer__open__time">10:00 AM - 11:00 PM</div>
+              </div>
+              <div class="section_footer__open">
+                <div class="section_footer__open__days">Friday - Sunday</div>
+                <div class="section_footer__open__time">12:00 AM - 03:00 AM</div>
+              </div>
+    
+            </div>
+          </div> <!-- / .row -->
+          <div class="row">
+            
+            
+              <!-- Copyright -->
+              <div class="copyright">
+                <i class="fa fa-copyright"></i> <span id="js-current-year">2018</span> Ling's Cars. All rights reserved.
+              </div>
+    
+            
+          </div> <!-- / .row -->
+        </div> <!-- / .container -->
+      </footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="<%= url('/main.js') %>"></script>
+</body>
+
+</html>

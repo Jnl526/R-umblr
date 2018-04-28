@@ -4,12 +4,16 @@
             <div class="container">	
             <div class="card-wrapper">
                     <% @posts.each do |post| %>
+                        <h5 class="card-title"><%= post.title %></h5>
+                        <%if post.tags%>
+                        <% post.tags.each do |tag|%>
+                            <p> <%=tag.tag_name%> </p>
+                        <%end%>
+                    <%end%>
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=<%= car.img_url %> alt="Card image cap">
+                            <img class="card-img-top" src=<%= post.featured_img %> alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title"><%= car.car_name %><span class="card-text">$<%= car.car_price %></span></h5>
-                                <p class="card-text"><%= car.car_model %></p>
-                                
+                            <p class="card-text"><%= post.content %></p>
                             </div>
                         </div>
                     <% end %>
