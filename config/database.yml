@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: about_nothing 
+
+  production:
+  adapter: postgresql
+  host: <%= ENV['DATABASE_URL'] %> 
