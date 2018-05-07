@@ -1,0 +1,62 @@
+<div class="main bd-content p-8" id="content" role="main">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row ">
+            <div class="col-12">
+                <nav class="navbar">	
+                <div class="container">
+                <h1 class="text-center col-12 pb-3"><a class="navbar-brand m-0" href="/"><img src="<%= url('/images/logo.png')%>"><br />It's About... Nothing?</a></h1>
+                </div>
+                </nav>
+                </div>
+
+        <div class="col-md-7 center">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Create your profile! </h4>
+                </div>
+            <div class="card-body mt-5">
+                <form  method="POST" action="/signup">
+                    <div class="row m-0">
+                        <div class="col-sm-5">
+                            <div class="">
+                                <p>First Name</p>
+                                <p><input class="form-control mr-sm-2"  type="text" name="first_name" required="required"></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group bmd-form-group">
+                                <p>Last Name</p>
+                                <input class="form-control"  type="text" name="last_name" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row m-0">
+                        <div class="col-md-5">
+                            <div class="form-group ">
+                                <p>Email</p>
+                                <input class="form-control" type="email" name="email" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <p>Password</p>
+                                <input class="form-control " type="password" name="password" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                    <button type="submit" class="btn mt-5">Sign Up</button>
+                    </div>
+                            <div class="clearfix"></div>
+                        </form>
+                        <p class="p-3 text-center"> Already have an account? <a href="/login">Sign In</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
+        

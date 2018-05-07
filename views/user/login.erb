@@ -1,9 +1,47 @@
-<div class="main bd-content" id="content" role="main">
-    <div class="container">
-        <form class="form-inline my-2 my-lg-0" method="POST" action="/login">
-        <input class="form-control mr-sm-2" type="email" name="email" placeholder="email">
-        <input class="form-control mr-sm-2" type="password" name="password" placeholder="password">
-        <button class="btn my-2 my-sm-0" type="submit">Login</button>
-        </form>
+<div class="main bd-content p-8" id="content" role="main">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row ">
+            <div class="col-12">
+                <nav class="navbar">	
+                <div class="container">
+                <h1 class="text-center col-12 pb-3"><a class="navbar-brand m-0" href="/"><img src="<%= url('/images/logo.png')%>"><br />It's About... Nothing?</a></h1>
+                </div>
+                </nav>
+                </div>
+
+        <div class="col-md-7 center">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Welcome Back! </h4>
+                </div>
+            <div class="card-body mt-5">
+                <form  method="POST" action="/login">
+                    <div class="row m-0">
+                        <div class="col-md-5">
+                            <div class="form-group ">
+                                <p>Email</p>
+                                <input class="form-control" type="email" name="email" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <p>Password</p>
+                                <input class="form-control " type="password" name="password" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                    <button type="submit" class="btn mt-5">Sign In</button>
+                    </div>
+                            <div class="clearfix"></div>
+                        </form>
+                        <p class="p-3 text-center"> Don't have an account? <a href="/signup">Sign Up</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+<div>
+        

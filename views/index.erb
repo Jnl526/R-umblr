@@ -1,23 +1,139 @@
-<div class="main bd-content" id="content" role="main">
+<div class="home main bd-content" id="content" role="main">
 
-<section class="products">
-            <div class="container">	
-            <div class="card-wrapper">
-                    <% @posts.each do |post| %>
-                        <h5 class="card-title"><%= post.title %></h5>
-                        <%if post.tags%>
-                        <% post.tags.each do |tag|%>
-                            <p> <%=tag.tag_name%> </p>
-                        <%end%>
-                    <%end%>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=<%= post.featured_img %> alt="Card image cap">
-                            <div class="card-body">
-                            <p class="card-text"><%= post.content %></p>
-                            </div>
-                        </div>
-                    <% end %>
+    <section class="featured">
+        <div class="wrapper row clearfix">	
+                    <!-- home-featured -->
+            <div class="group col-md-5 pb-5">
+            <h2 class="title">Featured Post</h2>
+                <% @featured.each do |post| %>
+                    <div class="col-md-12 p-0 mt-3">
+                        <div class="card card-plain card-blog">
+                            <div class="card-image">
+                                <a href="/post/<%= post.id %>">
+                                    <img class="img img-raised rounded" src="<%= post.featured_img %>">
+                                </a>
+                            </div>     <!-- card-image -->
+                            <div class="card-body absolute">
+                            <h4 class="card-title"><a href="/post/<%= post.id %>"><%= post.title %> </a></h4>
+                            <p class="entry-meta">
+                            <span class="author"><a href="/profile/<%= post.user_id %>"><%=User.find(post.user_id).first_name%> &nbsp;<%=User.find(post.user_id).last_name%></a></span>
+                            <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
+                            </p>
+                            <p class="entry-meta">
+                            <span class="tags"><i class="fas fa-tags pr-2"></i>
+                                <% post.tags.each_with_index do |tag, index|%>
+                                    <span class="tags"> <a href="/tag/<%= tag.id %>"><%=tag.name%><%= "," unless post.tags.size==index+1 %></a> 
+                                <%end%> 
+                            </span>
+                            </p>
+                            <p><a href="/post/<%= post.id %>">
+                            Read More
+                        </a></p>
+                            </div><!-- card-body -->
+                        </div> <!-- card -->
+
+                    </div>
+                <% end %>
                 </div>
-            </div>
-        </section>
+
+                <!-- home-featured-side -->
+                <div class="group side col-md-6">
+                <h2 class="title">Recent Post</h2>
+                <% @recentposts.each do |post| %>
+                    <div class="row pb-5 ml-3 mt-3">
+                    <div class="col-md-5 col-5 ">
+                                <a href="/post/<%= post.id %>">
+                                    <img class="img img-raised rounded" src="<%= post.featured_img %>">
+                                </a>
+                            </div>
+                            <div class="col-7">
+                            <h4 class="card-title"><a href="/post/<%= post.id %>"><%= post.title %> </a></h4>
+                                <p class="entry-meta">
+                                <span class="author"><a href="/profile/<%= post.user_id %>"><%=User.find(post.user_id).first_name%> &nbsp;<%=User.find(post.user_id).last_name%></a></span>
+                            <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
+                            </p>
+                            <p class="entry-meta">
+                            <span class="tags"><i class="fas fa-tags pr-2"></i>
+                                <% post.tags.each_with_index do |tag, index|%>
+                                    <span class="tags"> <a href="/tag/<%= tag.id %>"><%=tag.name%><%= "," unless post.tags.size==index+1 %></a> 
+                                <%end%> 
+                            </span>
+                            </p>
+                            <p><a href="/post/<%= post.id %>">
+                            Read More
+                        </a></p>
+                            </div>
+                    </div>
+                <% end %>
+                </div>
+        </div>
+    </section>
+                 <!-- Show latest posts -->
+
+    <section class="recent">
+        <div class="container">	
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="title">Latest Posts </h2>
+                        <br>
+                        <div class="row justify-content-center">
+                            <% @posts.each do |post| %>
+                                <div class="col-6">
+                                    <div class="card card-plain card-blog">
+                                        <div class="card-image ">
+                                            <a href="/post/<%= post.id %>">
+                                                <img class="img img-raised rounded size" src="<%= post.featured_img %>">
+                                            </a>
+                                        </div><!-- card-image -->
+                                        <div class="card-body">
+                                        <h4 class="card-title"><a href="/post/<%= post.id %>"><%= post.title %> </a></h4>
+                                <p class="entry-meta">
+                                <span class="author"><a href="/profile/<%= post.user_id %>"><%=User.find(post.user_id).first_name%> &nbsp;<%=User.find(post.user_id).last_name%></a></span>
+                            <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
+                            </p>
+                            <p class="entry-meta">
+                            <span class="tags"><i class="fas fa-tags pr-2"></i>
+                                <% post.tags.each_with_index do |tag, index|%>
+                                    <span class="tags"> <a href="/tag/<%= tag.id %>"><%=tag.name%><%= "," unless post.tags.size==index+1 %></a> 
+                                <%end%> 
+                            </span>
+                            </p>
+                            <p><a href="/post/<%= post.id %>">
+                            Read More
+                        </a></p>
+                                        <% if user_exists? %>
+                            <p class="card-text"><a href="/post/<%= post.id %>/edit">edit/delete post</a></p>
+                            <% end %>
+                                        </div><!-- card-body -->
+                                    </div> <!-- card -->
+                                </div>
+                            <% end %>
+                        </div>
+                </div>   <!-- col-md-8 -->
+
+                <div class="col-md-4">
+                  <div class="site-sidebar">
+                    <section class="widget widget_search">
+                      <form class="search-form" action="/search", method="get">
+                        <div class="form-group">
+                          <label for="search" class="sr-only">Search</label>
+                          <input type="hidden" name="search_by" id="search_by" value="tag">
+                          <input id="search" type="search" name="query" class="form-control search-field" placeholder="Search by tags...">
+                        </div><!-- .form-group -->
+                        <button type="submit" class="btn btn-default search-submit"><i class="fa fa-search"></i></button>
+                      </form><!-- .search-form -->
+                    </section><!-- .widget_search -->
+
+                    <section class="widget widget_about">
+                      <h3 class="widget-title text-center"><span>About</span></h3>
+                      <div class="tagcloud">
+                      <p class="text-white text-center">It's About Nothing is a blog concept that allows multiple users to post anything really...about nothing. 
+                      </p>
+                            
+                      </div>
+                    </section>
+                  </div><!-- .site-sidebar -->
+                </div>
+         </div>
+    </section>
 </div> <!--  	main	 -->

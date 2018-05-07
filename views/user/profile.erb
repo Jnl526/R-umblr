@@ -1,27 +1,80 @@
-<div class="main bd-content" id="content" role="main">
+<div class="breadcrumbs pt-4">
     <div class="container">
-        <h1>Welcome, <%=@user.first_name%> <%=@user.last_name%></h1>
-   
-        <section>
-            <form id="usrform" class="form-inline my-2 my-lg-0"  method="POST" action="/profile/<%= @user.id %>">
-                <input class="form-control mr-sm-2" type="hidden" name="_method" value="PUT">
-                <input class="form-control mr-sm-2"  type="text" name="first_name" value="<%= @user.first_name %>">
-                <input class="form-control mr-sm-2"  type="text" name="last_name" value="<%= @user.last_name %>">
-                <input class="form-control mr-sm-2" type="date" name="birthday" value="<%= @user.birthday %>">
-                <input class="form-control mr-sm-2" type="email" name="email" value="<%= @user.email %>">
-                <input class="form-control mr-sm-2" type="password" name="password" value="<%= @user.password %>">
-                <input class="form-control mr-sm-2" type="text" name="img_url" value="<%= @user.img_url %>">
-                <textarea class="form-control mr-sm-2" rows="3" name="info" value="<%= @user.info %>"><%= @user.info %></textarea>
-                <textarea class="form-control mr-sm-2" rows="3" name="statement" value="<%= @user.statement %>">
-            <%= @user.statement %></textarea>
-            <button class="btn my-2 my-sm-0" type="submit">Edit</button>
-            </form>
-            
-        
-        <form action="/user/<%= @user.id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete?')">
-            <input type="hidden" name="_method" value="DELETE">
-            <button class="btn my-2 my-sm-0" type="submit">Delete</button>
-        </form>
+            <nav class="navbar">
+                <ul class="breadcrumbs navbar-nav ">
+                    <li class="nav-item">
+                        <a class="p-2 text-tan" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <sub><i class="fas fa-ellipsis-h text-tan "></i></sub>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-tan" href="#"><%= @poster.first_name %>&nbsp;<%= @poster.last_name %></a>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+</div>
+<div class="main bd-content profile" id="content" role="main">
+    <div class="container">
+        <section class="featured">  
+            <div class="wrapper row clearfix">
+                <div class="col-md-8">
+                    <% @posts.each do |post| %>
+                        <div class="row pb-5 ml-3 mt-3">
+                            <div class="col-md-5 col-5 ">
+                                    <a href="/post/<%= post.id %>">
+                                        <img class="img img-raised rounded thumb" src="<%= post.featured_img %>">
+                                    </a>
+                                
+                                </div>
+                                <div class="col-7">
+                                <h4 class="card-title"><a href="/post/<%= post.id %>"><%= post.title %> </a></h4>
+                                <p class="entry-meta">
+                            <span class="author"><%=User.find(post.user_id).first_name%> &nbsp;<%=User.find(post.user_id).last_name%></span>
+                            <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
+                            </p>
+                            <p class="entry-meta">
+                            <span class="tags"><i class="fas fa-tags pr-2"></i>
+                                <% post.tags.each_with_index do |tag, index|%>
+                                    <span class="tags"> <a href="/tag/<%= tag.id %>"><%=tag.name%><%= "," unless post.tags.size==index+1 %></a> 
+                                <%end%> 
+                            </span>
+                            </p>
+                            <p><a href="/post/<%= post.id %>">
+                            Read More
+                        </a></p>
+                                <% if user_exists? %>
+                            <p class="card-text"><a href="/post/<%= post.id %>/edit">edit/delete post</a></p>
+                            <% end %>
+
+                                </div>
+                            
+                        </div>
+                    <% end %>
+                </div>  <!-- col-md-8 -->
+                <div class="col-md-4">
+                            <div class="card card-profile">
+                                <div class="card-avatar mx-auto">
+                                        <img class="img img-thumbnail" src="<%= @poster.img_url %>">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title text-center text-tan"><%= @poster.first_name %>&nbsp;<%= @poster.last_name %></h4>
+                                    <p class="quote text-center">
+                                    <%= @poster.statement %>
+                                    </p>
+                                    <p class="card-description">
+                                    <%= @poster.info %>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                <!-- col-md-4 -->
+            </div> <!--  wrapper	 -->
         </section>
-    </div> <!--  	container	 -->
-</div <!--  	main	 -->
+    </div>
+
+
+
+</div> <!--  	main	 -->

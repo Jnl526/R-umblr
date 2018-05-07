@@ -33,9 +33,14 @@ color: #cea88a;
     }
 }
 .center {
-    text-align: center;
         margin: auto;
-    
+}
+button,.btn{
+    outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
 }
 .btn {
     color: #fff;
@@ -43,6 +48,7 @@ color: #cea88a;
     background-image: none;
     border-color: transparent;
     border-radius: 0;
+    padding: .475rem 4.75rem;
     &:focus,
     &:hover {
         color: #fff;
@@ -51,23 +57,54 @@ color: #cea88a;
         box-shadow: none;
     }
 }
-.form-control {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #000;
-    background-color: transparent;
-    background-clip: padding-box;
-    border: 2px solid rgba(76, 61, 44, 0.72);
-    border-radius: 0;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+
 .align-self-center {
     align-self: center!important;
 }
 .align-self-end {
     
     z-index: 1;
+}
+.right{
+    float:right;
+}
+.left{
+    float:left;
+}
+
+.title,
+.widget-title{
+    color: #c5c5c5;
+    padding-bottom: 10px;
+    font-size: 30px;
+    
+}
+.tagcloud{
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+@-webkit-keyframes autofill {
+    to {
+        color: #666;
+        background: transparent;
+    }
+}
+@keyframes autofill {
+    to {
+        color: #666;
+        background: transparent;
+    }
+}
+.p-8{
+    padding: 8% 0 0;
+}
+
+.bk-222{
+    background-color : #222222;
 }

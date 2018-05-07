@@ -1,0 +1,98 @@
+<div class="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <a class="navbar-brand" href="/dashboard">New Post</a>
+                    </div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <p class="log text-tan">Hey, <%= @user.first_name %></p>
+                            </li>
+                            <li class="nav-item">
+                                    
+                                        <a class="nav-link log" href="/logout" onclick="return confirm('Are you sure?')"><i class="fas fa-sign-out-alt left" style="
+                                        line-height: unset;
+                                    "></i><span>Logout</span></a>
+                                                                    
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card col-md-11">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Create A New Post</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class="row" method="POST" action="/post/new">
+                                <div class="col-md-7">
+                                    <div class="row m-0">
+                                            <div class="col-md-12">
+                                                    <div class="form-group bmd-form-group">
+                                                        <p><input class="form-control mr-sm-2"  type="text" name="title" placeholder="Enter Title Here"></p>
+                                                    </div>
+                                            </div> 
+                                        </div>  <!-- row1 -->  
+
+                                        <div class="row m-0">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="form-group ">
+                                                        <textarea class="form-control " rows="7" name="content" placeholder="Your Content Here"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> <!-- row2 -->
+                                
+                                        <div class="col-md-12 text-right">
+                                            <button type="submit" class="btn mt-5">Publish</button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                </div>  <!-- col-md-7 -->
+
+                                    <div class="col-md-4">
+                                        <div class="card card-profile">
+                                            <div class="card-body">
+                                                <div class="row m-0">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <h6>Featured Image</h6>
+                                                            <p><input class="form-control mr-sm-2"  type="text" name="featured_img" placeholder="Enter image url"></p>
+                                                        </div>
+                                                    </div> 
+                                                </div> 
+                                                <div class="row m-0">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <h6>Tags</h6>
+                                                            <% if @tags %>
+                                                            <% @tags.each do |tag| %>
+                                                              <%= tag.name %>
+                                                              <input type="checkbox" id="postTags" name="tag[tag_ids]" value="<%= tag.id %>"><br>
+                                                            <% end %>
+                                                          <% end %>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="col-md-12">
+                                                    <div class="form-group bmd-form-group">
+                                                        <p><input class="form-control mr-sm-2"  type="text" name="tags" id="postTags" placeholder="tags"></p>
+                                                    </div>
+                                            </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div> <!-- col-md-4 -->
+                                </div><!-- row -->
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+                
+            </div><!-- row -->
+        </div> <!-- container-fluid -->
+    </div> <!-- content -->
+</div>  <!-- main -->

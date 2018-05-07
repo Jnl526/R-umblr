@@ -1,0 +1,75 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 2px;
+  margin-top: 0;
+  -webkit-margin-before: 8px;
+  -webkit-margin-after: 8px;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+a,
+a:hover,
+.text-tan {
+  color: #cea88a;
+}
+
+.hero-info h1 {
+  font-size: 32px;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.btn {
+  color: #fff;
+  background-color: rgba(105, 75, 47, 0.4);
+  background-image: none;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.btn:focus, .btn:hover {
+  color: #fff;
+  background-color: #694b2f;
+  border-color: #694b2f;
+  box-shadow: none;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 2px solid rgba(76, 61, 44, 0.72);
+  border-radius: 0;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.align-self-center {
+  align-self: center !important;
+}
+
+.align-self-end {
+  z-index: 1;
+}
+/*# sourceMappingURL=misc.css.map */

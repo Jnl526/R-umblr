@@ -1,0 +1,56 @@
+<div class="main-panel tag">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                     <p class="navbar-brand text-tan">Tags
+                    </div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <p class="log text-tan">Hey, <%= @user.first_name %></p>
+                            </li>
+                            <li class="nav-item">
+                                    
+                                        <a class="nav-link log" href="/logout" onclick="return confirm('Are you sure?')"><i class="fas fa-sign-out-alt left" style="
+                                        line-height: unset;
+                                    "></i><span>Logout</span></a>
+                                                                    
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Add New Tag</h4>
+                        </div>
+                    <div class="card-body">
+                    <form id="usrform" class="form-inline my-2 my-lg-0"  method="POST" action="/tags">
+                    <input class="form-control mr-sm-2"  type="text" name="name" placeholder="Tag name">
+                    <button class="btn my-2 my-sm-0" type="submit">Add Tag</button>
+                </form>
+    
+                    </div>
+            </div>
+
+        
+                </div><!-- col-md-7 -->
+                <div class="col-md-4 text-white">
+                    <div class="form-group">
+                        <h6>Tags</h6>
+                        <div class="tag-list"
+                            <ul>
+                                <% @tags.each do |tag| %>
+                                <li><%= tag.tag_name %></li>
+                                <% end %>
+                            </ul>
+                     </div>
+                </div> <!-- col-md-4 -->
+            </div><!-- row -->
+        </div> <!-- container-fluid -->
+    </div> <!-- content -->
+</div>  <!-- main -->

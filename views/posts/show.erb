@@ -1,0 +1,80 @@
+<div class="breadcrumbs pt-4">
+    <div class="container">
+            <nav class="navbar">
+                <ul class="breadcrumbs navbar-nav ">
+                    <li class="nav-item">
+                        <a class="p-2 text-tan" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <sub><i class="fas fa-ellipsis-h text-tan "></i></sub>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-tan" href="#"><%= @post.title %></a>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+</div>
+<div class="post-single main bd-content" id="content" role="main">
+    <section class="posts">
+        <div class="container">	
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card-wrapper text-left">
+                        <h2 class="title"><%= @post.title %></h2>
+                            <p class="entry-meta">
+                                <span class="date"><i class="far fa-calendar-alt pr-2"></i><%= @post.created_at.strftime('%B %d, %Y') %></span> &nbsp;
+                                <span class="tags"><i class="fas fa-tags pr-2"></i>
+                                <% @post.tags.each_with_index do |tag, index|%>
+                                    <span class="tags"> <a href="/tag/<%= tag.id %>"><%=tag.name%><%= "," unless @post.tags.size==index+1 %></a> 
+                                <%end%> 
+                                </span>
+                            </p>
+                    <div class="col-12 mt-5"
+                        <div class="card">
+                            <img class="card-img-top" src=<%= @post.featured_img %> alt="Card image cap">
+                            <div class="card-body">
+                            <p class="card-text text-white"><%= @post.content %></p>
+                            <% if user_exists? %>
+                            <p class="card-text"><a href="/post/<%= @post.id %>/edit">edit/delete post</a></p>
+                            <% end %>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="site-sidebar">
+                    <section class="widget widget_search">
+                      <form class="search-form" action="/search", method="get">
+                        <div class="form-group">
+                          <label for="search" class="sr-only">Search</label>
+                          <input type="hidden" name="search_by" id="search_by" value="tag">
+                          <input id="search" type="search" name="query" class="form-control search-field" placeholder="Search by tags...">
+                        </div><!-- .form-group -->
+                        <button type="submit" class="btn btn-default search-submit"><i class="fa fa-search"></i></button>
+                      </form><!-- .search-form -->
+                    </section><!-- .widget_search -->
+                    <section class="widget widget_profile">
+                          <div class="card card-profile">
+                              <div class="card-avatar mx-auto">
+                                      <img class="img img-thumbnail" src="<%= @post.user.img_url %>">
+                              </div>
+                              <div class="card-body">
+                                  <h4 class="card-title text-center"><%= @post.user.first_name %>&nbsp;<%= @post.user.last_name %></h4>
+                                  <p class="quote text-center">
+                                  <%= @post.user.statement %>
+                                  </p>
+                                  <p class="card-description">
+                                  <%= @post.user.info %>
+                                  </p>
+                                  
+                              </div>
+                          </div>
+                      </div>
+                    </section>     
+            </div>
+            </div> <!--  	row	 -->
+        </div> <!--  	container	 -->
+   </section>
+        
+</div> <!--  	main	 -->

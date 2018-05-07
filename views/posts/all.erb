@@ -1,0 +1,67 @@
+<div class="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-brand text-tan" >Posts</div>
+                    </div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <p class="log text-tan">Hey, <%= @user.first_name %></p>
+                            </li>
+                            <li class="nav-item">
+                                    
+                                        <a class="nav-link log" href="/logout" onclick="return confirm('Are you sure?')"><i class="fas fa-sign-out-alt left" style="
+                                        line-height: unset;
+                                    "></i><span>Logout</span></a>
+                                                                    
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card col-md-11">
+                    <div class="card-header card-header-primary">
+                            <h4 class="card-title">All Posts</h4>
+                        </div>
+                <div class="col-md-8 mt-5">
+                <% @posts.each do |post| %>
+                    <div class="row pb-5 ml-3 mt-3">
+                        <div class="col-md-5 col-5 ">
+                                <a href="/post/<%= post.id %>">
+                                    <img class="img img-raised rounded thumb" src="<%= post.featured_img %>">
+                                </a>
+                            
+                            </div>
+                            <div class="col-7">
+                            
+                            <p class="entry-meta">
+                            <span class="author"><a href="/profile/<%= post.user_id %>"><%=User.find(post.user_id).first_name%> &nbsp;<%=User.find(post.user_id).last_name%></a></span>
+                            <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
+                            </p>
+                            <p class="entry-meta">
+                            <span class="tags"><i class="fas fa-tags pr-2"></i>
+                                <% post.tags.each_with_index do |tag, index|%>
+                                    <span class="tags"> <a href="/tag/<%= tag.id %>"><%=tag.name%><%= "," unless post.tags.size==index+1 %></a> 
+                                <%end%> 
+                            </span>
+                            </p>
+                            <h5 class="card-title"><a href="/post/<%= post.id %>"><%= post.title %> </a></h5>
+                            <% if user_exists? %>
+                        <p class="card-text"><a href="/post/<%= post.id %>/edit">edit/delete post</a></p>
+                        <% end %>
+
+                            </div>
+                        
+                    </div>
+                <% end %>
+            </div>  <!-- col-md-8 -->
+                </div> 
+                
+            </div><!-- row -->
+        </div> <!-- container-fluid -->
+    </div> <!-- content -->
+</div>  <!-- main -->
