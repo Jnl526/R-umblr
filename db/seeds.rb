@@ -1,27 +1,49 @@
 require 'faker'
 
-# User.create(first_name: "Bob", last_name: "Tester", birthday: "08/16/1987", email: "test@email.com", password: "test123", img_url: "", info: "yes", statement: "yes")
+ User.create(first_name: "Vance", last_name: "Osinski", birthday: "1981-06-17", email: "name1@domain.com", password: "test123", img_url: "", info: "It's Sunday, but screw it — juice box time. I need a fake passport, preferably to France…I like the way they think. There's a girl in my soup! I [bleeped] the business model. Yeah, she had all kinds of orgasms. WHY was this show cancelled? I mean, COME ON. You're Killing Me, Buster.", statement: "Shorel'aran.")
+ User.create(first_name: "Javier", last_name: "Rempel", birthday: "1982-12-28", email: "name2@domain.com", password: "test123", img_url: "", info: "This show was cancelled. I mean, COME ON. If you're suggesting I play favorites, you're wrong. I love all of my children equally. I don't care for Gob. Buster's in what we like to call a light to no coma. In layman's terms, it might be considered a very heavy nap. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear. We never had the chance to. Oh, I can just taste those meaty leading man parts in my mouth. I've always been deeply passionate about nature. Perhaps you remember Neuterfest? M: I'll never forget your wedding. Suddenly he's too much of a big-shot to brush mother's hair.", statement: "Remember the Sunwell.")
+ User.create(first_name: "Arlie", last_name: "Gorczany", birthday: "1991-10-17", email: "name3@domain.com", password: "test123", img_url: "", info: "Happy Franklin Friday. Say something that will terrify me. Lindsay: F*** me. Tobias: No, that didn't do it. OH MY GOD, WE'RE HAVING A FIRE… sale. Oh, the burning! ♪♪ Amaaaaaaziiiing Graaaace ♪♪", statement: "Ah, you have a death wish.")
+User.create(first_name: "Adrien", last_name: "Carroll", birthday: "1990-09-27", email: "name4@domain.com", password: "test123", img_url: "", info: "I don't want no part of yo tight-ass country-club, ya freak bitch! That's how Tony Wonder lost a nut. Did Ted make an appointment? No. Well, then Ted can GET THE HELL OUT OF THIS OFFICE! YOU GET THE HELL OUT! There are dozens of us! Dozens! She calls it a Mayonegg. When a man needs to prove to a woman that he's actually… When a man loves a woman… You just grab that brownish area by its points and you don't let go no matter what your mother tells you!", statement: "Not very intelligent, are you?")
+User.create(first_name: "Alta", last_name: "Jones", birthday: "1982-04-24", email: "name5@domain.com", password: "test123", img_url: "", info: "Oh, COME ON! It's ok. You be with Yam. I know, I just call her Annabelle cause she's shaped like a…she's the belle of the ball! I just don't want him to point out my cracker ass in front of Ann. [climbing under trampoline] This shall keep me safe from the hot Mexican sun. You're Killing Me, Buster.", statement: "Ah, you have a death wish.")
+User.create(first_name: "Theresia", last_name: "Auer", birthday: "1986-06-05", email: "name6@domain.com", password: "test123", img_url: "", info: "Pound is tic-tac-toe right? Or it could be your colon. I'd want to get in there and find some answers. Are all the guys in here… you know? George Sr: No not all of them. Barry: Yeah. It's never the ones you hope. Don't worry, these young beauties have been nowhere near the bananas. How could I say no to the woman who gave me chlamydia? Mr. Zuckerkorn, you've been warned about touching.", statement: "The reckoning is at hand!")
+User.create(first_name: "Kara", last_name: "Kassulke", birthday: "1983-07-20", email: "name7@domain.com", password: "test123", img_url: "", info: "Pound is tic-tac-toe right? Or it could be your colon. I'd want to get in there and find some answers. Are all the guys in here… you know? George Sr: No not all of them. Barry: Yeah. It's never the ones you hope. Don't worry, these young beauties have been nowhere near the bananas. How could I say no to the woman who gave me chlamydia? Mr. Zuckerkorn, you've been warned about touching.", statement: "Hold your head high.")
+User.create(first_name: "Liliane", last_name: "Boyer", birthday: "1983-07-20", email: "name8@domain.com", password: "test123", img_url: "", info: "Let me give that oatmeal some brown sugar. Even it means me taking a chubby… I will suck it up. YOU'RE the Chiclet! Not me. Caw ca caw, caw ca caw, caw ca caw! Also, your knee is on my heart. That's how Tony Wonder lost a nut. Bob Loblaw Lobs Law Bomb.", statement: "Anaria Shola.")
+User.create(first_name: "Elizabeth", last_name: "Reichel", birthday: "1988-06-23", email: "name9@domain.com", password: "test123", img_url: "", info: "It's so watery. And yet there's a smack of ham to it. Pound is tic-tac-toe, right? What's gotten into you? Have you been eating cheese? If that man's straight, then I am sober. ", statement: "I had little patience to begin with!")
+User.create(first_name: "Alyce", last_name: "Dietrich", birthday: "1986-11-14", email: "name10@domain.com", password: "test123", img_url: "", info: "I'm a complete failure. I can't even fake the death of a stripper. Suddenly he's too much of a big-shot to brush mother's hair. O-kay, who'd like a banger in the mouth? It looks like you've been looking for dragons… in the future. Why are you squeezing me with your body? No, I was ashamed to be SEEN with you. I like being with you. You're losing blood, aren't you? Probably, my socks are wet.")
 
-# Post.create(title: "Name", featured_img: "none", content: "first,hello", user_id: 1)
 
-# Tag.create(tag_name: "first")
-# Tag.create(name: "hello")
+Post.create(title: "Duke", featured_img: "http://localhost:4567/images/flower.jpg", content: "Vero reprehenderit est exercitationem libero laboriosam. Nihil animi voluptas est et esse voluptatem. Voluptates aut consequatur.", user_id: 7)
+Post.create(title: "Fedaykin Commando", featured_img: "http://localhost:4567/images/abstract.jpg", content: "Cum quaerat accusantium. Consequatur suscipit dolore eos inventore ut. Quia fugit distinctio. Earum cumque sit at ut perferendis distinctio.", user_id: 3)
+Post.create(title: "Guild Navigator", featured_img: "http://localhost:4567/images/animal.jpg", content: "Veniam et ex aliquid doloribus qui. Consequuntur aspernatur sed. Quas qui dolore placeat in. Eaque asperiores voluptatibus corrupti molestiae.", user_id: 8)
+Post.create(title: "Doctor", featured_img: "http://localhost:4567/images/adventure.jpg", content: "Sint odit qui doloribus dolores. Vitae nisi qui maxime eaque neque tempora. Voluptatem similique culpa consequatur deleniti beatae ipsam.", user_id: 9)
+Post.create(title: "Fish Speaker", featured_img: "http://localhost:4567/images/door.jpg", content: "Explicabo at dolorem ut sit quibusdam. Adipisci eos et facere excepturi culpa. Maxime molestiae provident at corrupti repellendus. Delectus sint rem.", user_id: 5)
+Post.create(title: "Naib", featured_img: "http://localhost:4567/images/ancient.jpg", content: "Nesciunt est esse dolorem. Qui mollitia iste quibusdam ducimus facere accusantium sunt. Officiis voluptatem dolorum facere recusandae id.", user_id: 6)
+Post.create(title: "Ambassador", featured_img: "http://localhost:4567/images/blue-flora.jpg", content: "Neque est incidunt ea beatae laborum ab. Nesciunt nam enim molestias. Nihil velit corrupti sed quasi consequuntur inventore sit.", user_id: 10)
+Post.create(title: "Prince", featured_img: "http://localhost:4567/images/creative.jpg", content: "Earum quae porro. Maxime beatae quia. In dignissimos aut et doloribus aperiam.", user_id: 4)
+Post.create(title: "Reverend Mother", featured_img: "http://localhost:4567/images/asphalt.jpg", content: "Nihil voluptas nihil sunt qui ea. Possimus facere pariatur. Impedit cupiditate distinctio voluptas voluptate sed dolorum. Sed distinctio harum velit iste amet. Ullam modi ut quos enim.", user_id: 1)
+Post.create(title: "Grand Patriarch", featured_img: "http://localhost:4567/images/bloom.jpg", content: "Quisquam veniam sed eos. Dolores et sint quia ut sapiente. Est alias tempore sunt.", user_id: 2)
 
-# PostTag.create(post_id: 1, tag_id: 1)
-# PostTag.create(post_id: 1, tag_id: 2)
 
-# 10.times do |i|
-#     User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,birthday: Faker::Date.birthday(25, 41), email:"name#{i+1}@domain.com", password: "test123", img_url: Faker::Placeholdit.image, info: Faker::VForVendetta.speech, statement: Faker::WorldOfWarcraft.quote)
-# end
+Tag.create(name: "quibusdam")
+Tag.create(name: "necessitatibus")
+Tag.create(name: "laborum")
+Tag.create(name: "vitae")
+Tag.create(name: "deleniti")
+Tag.create(name: "ad")
+Tag.create(name: "ab")
+Tag.create(name: "aut")
+Tag.create(name: "eius")
+Tag.create(name: "nisi")
 
-# 10.times do |e|
-#     	Post.create(title: Faker::Dune.title, featured_img: Faker::Placeholdit.image, content: Faker::Lorem.paragraphs(1), user_id: (rand(9) + 1))
-#     end 
-
-# 10.times do |i|
-#         Tag.create(name: Faker::Lorem.word)
-#     end
-
-# 10.times do |i|
-#         PostTag.create(post_id: (rand(9) + 1), tag_id: (rand(9) + 1))
-#     end
+PostTag.create(post_id: 1, tag_id: 4)
+PostTag.create(post_id: 1, tag_id: 9)
+PostTag.create(post_id: 3, tag_id: 2)
+PostTag.create(post_id: 7, tag_id: 3)
+PostTag.create(post_id: 7, tag_id: 5)
+PostTag.create(post_id: 8, tag_id: 7)
+PostTag.create(post_id: 3, tag_id: 3)
+PostTag.create(post_id: 6, tag_id: 3)
+PostTag.create(post_id: 1, tag_id: 8)
+PostTag.create(post_id: 7, tag_id: 9)
+PostTag.create(post_id: 9, tag_id: 1)
+PostTag.create(post_id: 9, tag_id: 11)
