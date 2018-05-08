@@ -14,14 +14,14 @@ require_relative './controllers/posts_controller'
 require_relative './controllers/tags_controller'
 
 
-configure do
-    set :database, {adapter: 'postgresql', database: 'about_nothing'}
-    enable :sessions
-    set :session_secret, "secret"
-  end
+# configure do
+#     set :database, {adapter: 'postgresql', database: 'about_nothing'}
+#     enable :sessions
+#     set :session_secret, "secret"
+#   end
 
 get '/' do
-    @posts = Post.all.order("created_at ASC")
+    @posts = Post.all().order(created_at: :asc).limit(20)
     @featured = @posts.limit(1)
     @recentposts = Post.all.order("created_at DESC").limit(3)
     erb :index

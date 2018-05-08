@@ -4,7 +4,7 @@ require "./app"
 
 get '/profile/:id' do
       @poster = User.find(params[:id])
-      @posts = Post.where(user_id: @poster.id)
+      @posts = Post.where(user_id: @poster.id).order(created_at: :desc).limit(20)
         erb :'user/profile'
   end
 
