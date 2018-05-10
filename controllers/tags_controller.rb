@@ -5,17 +5,18 @@ get '/tags' do
     if user_exists?
     @user = current_user
     @tags = Tag.all
-    erb :"/tags/new", layout: :"/user/layout_dash"
     else
         redirect "/login"
     end
+    erb :"/tags/new", layout: :"/user/layout_dash"
 end
+
 #********* Create Tag *********#
 post '/tags' do
 
     if user_exists?
-    @user = User.find(session[:id])
-    Tag.create(tag_name: params[:tag_name])
+    @user = current_user
+    @new_tag = Tag.create(name: params[:name])
     erb :"/tags/new", layout: :"/user/layout_dash"
     else
         redirect "/login"
