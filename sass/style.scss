@@ -124,8 +124,8 @@ header {
     }
     .breadcrumbs.navbar-nav,
     .home.navbar-nav {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
+        // -webkit-box-orient: horizontal;
+        // -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
     }

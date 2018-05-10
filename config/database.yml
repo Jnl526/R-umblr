@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: about_nothing 
+  database: about_nothing
 
   production:
   adapter: postgresql
