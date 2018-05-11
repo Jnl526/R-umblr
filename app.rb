@@ -4,9 +4,9 @@ require 'sinatra/base'
 require 'faker'
 
 require_relative './models/User'
-require_relative './models/Post'
-require_relative './models/PostTag'
-require_relative './models/Tag'
+require_relative './models/post'
+require_relative './models/postTag'
+require_relative './models/tag'
 
 require_relative './controllers/users_controller'
 require_relative './controllers/login_controller'
