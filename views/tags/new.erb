@@ -44,7 +44,7 @@
                         <h6>Tags</h6>
                         <div class="tag-list"
                             <ul>
-                                <% @tags.each do |tag| %>
+                                <% Tags.all.each do |tag| %>
                                 <li><%= tag.tag_name %></li>
                                 <% end %>
                             </ul>
