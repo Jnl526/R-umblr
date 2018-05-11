@@ -3,7 +3,7 @@ require "sinatra/activerecord"
 require 'sinatra/base'
 require 'faker'
 
-require_relative './models/User'
+require_relative './models/user'
 require_relative './models/post'
 require_relative './models/postTag'
 require_relative './models/tag'
