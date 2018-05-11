@@ -13,12 +13,12 @@ require_relative './controllers/login_controller'
 require_relative './controllers/posts_controller'
 require_relative './controllers/tags_controller'
 
+# set :database, {adapter: 'postgresql', database: 'about_nothing'}
 
-# configure do
-#     set :database, {adapter: 'postgresql', database: 'about_nothing'}
-#     enable :sessions
-#     set :session_secret, "secret"
-#   end
+configure do
+    enable :sessions
+    set :session_secret, "secret"
+  end
 
 get '/' do
     @posts = Post.all().order(created_at: :asc).limit(20)
