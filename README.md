@@ -13,6 +13,8 @@ Blogging app concept in the fourth individual project during Web-Development Fel
 
 # Deployment
   * https://itsaboutnothing.herokuapp.com/
+  * Demo login: 
+      email: name1@domain.com   password: test123
   
 # Features:
 * Users can browse posts without logging in
@@ -26,5 +28,6 @@ Blogging app concept in the fourth individual project during Web-Development Fel
 
 # Post MVP
 * Create additional search options such as search by author, date, and post title.
+
 
 
