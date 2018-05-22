@@ -11,8 +11,8 @@ Blogging app concept in the fourth individual project during Web-Development Fel
 * PostgreSQL
 * Bootstrap
 
-# Deployed to:
-  * Heroku
+# Deployment
+  * https://itsaboutnothing.herokuapp.com/
   
 # Features:
 * Users can browse posts without logging in
