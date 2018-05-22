@@ -28,6 +28,7 @@ Blogging app concept in the fourth individual project during Web-Development Fel
 
 # Post MVP
 * Create additional search options such as search by author, date, and post title.
+* Add paginate 
 
 
 
