@@ -87,6 +87,11 @@ button, .btn {
   padding: 0 10px;
 }
 
+.demo {
+  font-weight: 100;
+  padding-top: 10px;
+}
+
 @-webkit-keyframes autofill {
   to {
     color: #666;
@@ -406,8 +411,6 @@ header .input-field .prefix ~ input {
 
 .navbar .breadcrumbs.navbar-nav,
 .navbar .home.navbar-nav {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
 }
