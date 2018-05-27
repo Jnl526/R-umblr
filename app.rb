@@ -13,7 +13,7 @@ require_relative './controllers/login_controller'
 require_relative './controllers/posts_controller'
 require_relative './controllers/tags_controller'
 
-set :database, {adapter: 'postgresql', database: 'about_nothing'}
+# set :database, {adapter: 'postgresql', database: 'about_nothing'}
 
 configure do
     enable :sessions
