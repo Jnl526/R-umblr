@@ -9,6 +9,8 @@ get '/allposts/:id' do
     @user = current_user
     @poster = User.find(params[:id])
     @posts = Post.where(user_id: @poster.id)
+    
+
     erb :'posts/all', layout: :"/user/layout_dash"
 else
   # if user doesn't exist

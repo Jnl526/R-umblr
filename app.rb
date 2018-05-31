@@ -2,6 +2,9 @@ require "sinatra"
 require "sinatra/activerecord"
 require 'sinatra/base'
 require 'faker'
+require 'will_paginate'
+require 'will_paginate/active_record'  # or data_mapper/sequel
+
 
 require_relative './models/User'
 require_relative './models/Post'
@@ -21,9 +24,9 @@ configure do
   end
 
 get '/' do
-    @posts = Post.all().order(created_at: :asc).limit(20)
-    @featured = @posts.limit(1)
-    @recentposts = Post.all.order("created_at DESC").limit(3)
+    @posts = Post.all().order(created_at: :asc).limit(20).paginate(:page => params[:page], :per_page => 6)
+    @featured = Post.all.order(created_at: :asc).limit(1)
+    @recentposts = Post.all.order(created_at: :desc).limit(3)
     erb :index
 end
 
