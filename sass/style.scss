@@ -289,6 +289,7 @@ section{
     .img-thumbnail {
         padding: .25rem;
         background: $avatar;
+        background-size: cover;
         border: 1px solid #cea880;
         border-radius: 100%;
         max-width: 100%;

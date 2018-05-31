@@ -584,6 +584,7 @@ section {
 .card .img-thumbnail {
   padding: .25rem;
   background: url(/images/default_profile.png);
+  background-size: cover;
   border: 1px solid #cea880;
   border-radius: 100%;
   max-width: 100%;
