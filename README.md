@@ -16,7 +16,8 @@ Blogging app concept in the fourth individual project during Web-Development Fel
   * Demo login: 
       email: name1@domain.com   password: test123
       
- 
+ ![rumblr-min](https://user-images.githubusercontent.com/34486190/41206145-9ec91798-6ccd-11e8-8696-22437079bfdc.gif)
+
   
 # Features:
 * Users can browse posts without logging in.
