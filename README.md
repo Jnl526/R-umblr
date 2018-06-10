@@ -15,6 +15,10 @@ Blogging app concept in the fourth individual project during Web-Development Fel
   * https://itsaboutnothing.herokuapp.com/
   * Demo login: 
       email: name1@domain.com   password: test123
+      
+  <p style="text-align: center;">
+	   <img src= "https://media.giphy.com/media/ygx18tRk4MODAiS8kA/giphy.gif" width="900">
+  </p>
   
 # Features:
 * Users can browse posts without logging in.
